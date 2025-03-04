@@ -23,3 +23,6 @@ cd macro_config
 ### Configuration
  1. Add `[include macro_config.cfg]` to your printer.cfg
  2. Edit `macro_config.cfg` for your printer
+
+## Issues
+ If you encounter any issues, please install [macro_log](github.com/anonoei/macro_log), and share `ml.log`
