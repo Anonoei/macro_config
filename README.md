@@ -19,3 +19,7 @@ git clone https://github.com/Anonoei/macro_config.git
 cd macro_config
 ./install.sh
 ```
+
+### Configuration
+ 1. Add `[include macro_config.cfg]` to your printer.cfg
+ 2. Edit `macro_config.cfg` for your printer
