@@ -24,6 +24,8 @@ cd macro_config
  1. Add `[include macro_config.cfg]` to your printer.cfg
  2. Edit `macro_config.cfg` for your printer
     - See [configuration.md](https://github.com/Anonoei/macro_config/blob/main/configuration.md) for more information
+    - Check [_examples/settings.cfg](https://github.com/Anonoei/macro_config/blob/main/_examples/settings.cfg) for the default config
+    - Check [_examples/extras.cfg](https://github.com/Anonoei/macro_config/blob/main/_examples/extras.cfg) for recommended klipper includes/settings
 
 #### Examples
  - Voron 2.4 DOOMCUBE [Palladium](https://github.com/Anonoei/Palladium/blob/main/printer_data/config/macro_config.cfg)
