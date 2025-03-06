@@ -56,6 +56,7 @@ variable_print_park          : "FRONT"
 variable_print_mesh          : True
 variable_print_purge         : True
 variable_print_eject         : False
+variable_print_quick         : False
 ```
 
 ## Homing
