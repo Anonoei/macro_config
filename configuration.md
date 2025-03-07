@@ -42,6 +42,10 @@ variable_printer_park_speed    :   150
 # If not using filament values, these are defaults
 variable_printer_pa            :     0.05
 variable_printer_pa_st         :     0.03
+
+# Temperature adjustments from slicer config
+variable_printer_temp_hotend   :  0
+variable_printer_temp_bed      :  0
 ```
 
 ## Print settings
