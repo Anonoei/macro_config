@@ -87,7 +87,27 @@ variable_home_z_speed          : 100 # X/Y travel speed
 ```
 
 ## Probe
-### Klicky
+### Dockable
+ - `[include ./macro_config/probe/dockable.cfg]`
+```
+# ----- Probe ----- #
+variable_probe_dock_pos: 67.5, 300, 0
+
+variable_probe_approach_pos: 67.5, 250, 0
+variable_probe_detach_pos: 120, 300, 0
+
+variable_probe_travel_speed: 1000
+variable_probe_attach_speed: 50
+variable_probe_detach_speed: 50
+
+#variable_extract_pos:
+#variable_probe_insert_pos:
+```
+### TAP
+ - `[include ./macro_config/probe/tap.cfg]`
+```
+variable_probe_temp     : 95
+### Klicky (use dockable instead)
  - `[include ./macro_config/probe/klicky.cfg]`
 ```
 # ----- Probe ----- #
@@ -98,10 +118,6 @@ variable_probe_attach_move   : {'x':  0  , 'y': -50, 'z':    0}
 variable_probe_dock_speed    :  50   # Dock speed
 variable_probe_release_speed :  50   # Un-attach speed
 ```
-### TAP
- - `[include ./macro_config/probe/tap.cfg]`
-```
-variable_probe_temp     : 95
 ```
 ### Other
  - `[include ./macro_config/probe/generic.cfg]`
