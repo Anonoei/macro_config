@@ -39,6 +39,9 @@ variable_printer_scv           :    20
 variable_printer_restore_speed :   150
 variable_printer_park_speed    :   150
 
+variable_printer_idle_current  : 0.2
+variable_printer_steppers      : "x", "y", "z", "z1", "z2", "z3"
+
 # If not using filament values, these are defaults
 variable_printer_pa            :     0.05
 variable_printer_pa_st         :     0.03
@@ -75,6 +78,7 @@ variable_home_safety_speed     :   30 # X/Y z hop speed
 variable_home_accel            : 6000 # X/Y home accel
 variable_home_bounce           : True # Bounce off X/Y axis
 variable_home_bounce_speed     :  120
+variable_home_use_offsets      : True # Use Probe X/Y offsets for homing and leveling
 # X/Y Sensorless settings
 variable_home_sensorless       : True # X/Y
 variable_home_wait             :  500 # X/Y home wait in ms (for StallGuard to clear)
@@ -280,6 +284,16 @@ variable_beeper_max_freq : 10000
 ### LEDs
  - `[include ./macro_config/optional/image/leds.cfg]`
 ```
+# ----- LED settings ----- #
+# Height is Z-adjust from printer_probe
+# 'names' contains an alias for each LED, along with values
+#  'name': the name of the pin
+#  'type': one of 'pwm', or 'rgb'
+#  'status': what to set it to for different statuses
+# Current statuses:
+#  off on active printing
+#   heating homing leveling parking
+#   meshing ejecting loading unloading purging cleaning
 variable_leds: {
         'Enabled': True,
         'names': {
