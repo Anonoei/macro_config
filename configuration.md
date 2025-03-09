@@ -104,7 +104,8 @@ gcode: # -- END CONFIG
 #[include ./macro_config/level/z_tilt.cfg]
 [gcode_macro _CONFIG_HOMING]
 variable_safety_height    :   20 # Safe Z height
-variable_safety_speed     :   30 # X/Y z hop speed
+variable_speed_z          :   30 # Z hop speed
+variable_speed_xy         :   50 # X/Y move speed
 variable_accel            : 6000 # X/Y home accel
 variable_bounce           : True # Bounce off X/Y axis
 variable_bounce_speed     :  120
@@ -115,9 +116,8 @@ variable_wait             :  500 # X/Y home wait in ms (for StallGuard to clear)
 # variable_home_x_current        : .7   # X stepper current
 # variable_home_y_current        : .7   # Y stepper current
 # Z settings
-variable_z_pos            : -128, -128
+variable_z_pos            : -128, -128 # X, Y pos, -128 means middle of axis
 variable_z_hop            :  15 # Z hop
-variable_z_speed          : 100 # X/Y travel speed
 gcode: # -- END CONFIG
 ```
 
