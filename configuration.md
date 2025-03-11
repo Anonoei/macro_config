@@ -78,8 +78,9 @@ variable_scv           :    20
 
 variable_restore_speed :   100
 variable_park_speed    :   100
+variable_park_margin   :    10
 
-# If not using filament values, these are the defaults
+# If not using _CONFIG_FILAMENTS, these are defaults
 variable_retract_enabled  : True # Firmware retraction
 variable_retract_length   :   1
 variable_unretract_length :   1
@@ -90,10 +91,10 @@ variable_pa            :     0.05
 variable_pa_st         :     0.03
 
 # Temperature adjustments from slicer gcode
-variable_temp_hotend   :  15
-variable_temp_bed      :  0
+# variable_temp_hotend   :  15
+# variable_temp_bed      :  0
 
-variable_idle_current  : 0.2
+# variable_idle_current  : 0.2
 gcode: # -- END CONFIG
 ```
 
