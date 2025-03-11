@@ -59,9 +59,6 @@ SET_TOOL MATERIAL='ABS' BRAND='POLYMAKER' COLOR='101820'
    - [Scrape](#Scrape)
    - [Eject](#Eject)
    - [Fans](#Fans)
-     - [Filter](#Filter)
-     - [Bed](#Bed)
-     - [MCU](#MCU)
    - [Image](#Image)
      - [Beeper](#Bepper)
      - [LEDs](#LEDs)
@@ -319,42 +316,55 @@ gcode: # -- END CONFIG
 ```
 
 ## Fans
- - `[include ./macro_config/optional/fans/*.cfg]`
- - Automatic control: `[include ./macro_config/optional/loop.cfg]`
-### Filter
 ```
-# ----- Filter ----- #
-[gcode_macro _CONFIG_FAN_FILTER]
-variable_enabled     : True
-variable_fan         : 'fan_generic nevermore'
-variable_name        : 'nevermore'
-variable_speed       : 0.8
-variable_replace_in  : 50 # Hours
-variable_replacement : 'M117 Replace filter carbon'
-variable_filter_time : -1 # Placeholder
-variable_filaments   : ['ABS']
-gcode: # -- END CONFIG
-```
-### Bed
-```
-# ----- BED FANS ----- #
-[gcode_macro _CONFIG_FAN_BED]
-variable_enabled   : True
-variable_name      : 'bed_fans'
-variable_threshold : 60    # Bed target temp above, enable fans
-variable_heating   : 0.5   # Fan speed while bed is heating
-variable_target    : 0.2   # Fan speed once bed temp is reached
-gcode: # -- END CONFIG
-```
-### MCU
-```
-# ----- MCU Fans ----- #
-[gcode_macro _CONFIG_FAN_MCU]
-variable_mcufans       : False
-variable_mcufans_name  : 'mcu_fans'
-variable_mcufans_idle  : 60
-variable_mcufans_off   : 70
-variable_mcufans_print : 55
+# ----- Fans ----- #
+[include ./macro_config/optional/fans.cfg]
+[gcode_macro _CONFIG_FANS]
+variable_enabled: True
+variable_fans: {
+        'filter': {
+            'nevermore': {
+                'name': 'nevermore',
+                'type': 'fan_generic',
+                'config': {
+                    'filaments': ['ABS', 'ASA'],
+                    'replace_time': 50,
+                    'replace_action': 'M117 Replace filter carbon',
+                    'speed': 0.8,
+                },
+            },
+        },
+        'heater': {
+            'bedfans': {
+                'name': 'bed_fans',
+                'type': 'fan_generic',
+                'config': {
+                    'heater': 'heater_bed',
+                    'threshold': 60,
+                    'speeds': {
+                        'idle': 0.0,
+                        'heating': 0.5,
+                        'reached': 0.2,
+                        'cooling': 0.0,
+                    },
+                },
+            },
+        },
+        'status': {
+            'mcufans': {
+                'name': 'mcu_fans',
+                'type': 'temperature_fan',
+                'config': {
+                    'type': 'temperature',
+                    'status': {
+                        'active': 60,
+                        'off': 70,
+                        'print': 55,
+                    },
+                },
+            },
+        },
+    }
 gcode: # -- END CONFIG
 ```
 
