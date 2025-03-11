@@ -4,6 +4,38 @@
 This line must be included in `macro_config.cfg`
  - `[include ./macro_config/base_includes.cfg]`
 
+## Slicer
+### SuperSlicer
+#### Printer Settings
+##### Start G-Code
+```
+SET_NOZZLE DIAMETER={nozzle_diameter[initial_extruder]}
+PRE_PRINT BED_TEMP=[first_layer_bed_temperature] HOTEND_TEMP={first_layer_temperature[initial_extruder] + extruder_temperature_offset[initial_extruder]} CHAMBER_TEMP={chamber_temperature} TOOL_MACRO="{start_filament_gcode[initial_extruder]}"
+PRINT_START
+```
+##### End G-Code
+```
+PRINT_END
+```
+##### Before layer change G-code
+```
+_LAYER_BEFORE_CHANGE HEIGHT=[layer_z] LAYER=[layer_num]
+```
+##### After layer change G-code
+```
+_LAYER_AFTER_CHANGE
+```
+##### Pause print G-code
+```
+PAUSE
+```
+#### Filament settings (if using MMU)
+##### Start G-code
+Set the material, brand, and color to match _CONFIG_FILAMENTS
+```
+SET_TOOL MATERIAL='ABS' BRAND='POLYMAKER' COLOR='101820'
+```
+
 ## Jump to section
  - Required sections
    - [General](#General)
