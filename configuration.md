@@ -229,7 +229,7 @@ variable_load_name         : 'print'
 variable_adaptive          : False
 variable_adaptive_margin   : 0
 variable_adaptive_fuzz     : 3
-variable_adaptive_min_area : 2600
+variable_adaptive_min_area : 400
 gcode: # -- END CONFIG
 ```
 
