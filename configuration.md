@@ -206,10 +206,10 @@ gcode: # -- END CONFIG
 # ----- Filament ----- #
 [include ./macro_config/optional/filament.cfg]
 [gcode_macro _CONFIG_FILAMENT]
-variable_filament_spoolman       : True
-variable_filament_preload        : 10 # Load extra to ensure grip on filament
-variable_filament_unload_eject   : 20 # Unload extra to ensure filament is ejected
-variable_filament_wait           :  2
+variable_spoolman       : True
+variable_preload        : 10 # Load extra to ensure grip on filament
+variable_unload_eject   : 20 # Unload extra to ensure filament is ejected
+variable_wait           :  2
 
 variable_melting_pool   :  20 # nozzle tip to just below top of nozzle
 variable_cooling_tube   :  64 # nozzle tip to start of bowden tube
