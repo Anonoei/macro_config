@@ -26,6 +26,7 @@ cd macro_config
     - See [configuration.md](configuration.md) for more information
     - Check [_examples/settings.cfg](_examples/settings.cfg) for the default config
     - Check [_examples/extras.cfg](_examples/extras.cfg) for recommended klipper includes/settings
+    - Check [REFERENCE.md](REFERENCE.md) for command documentation
 
 #### Examples
  - Voron 2.4 DOOMCUBE [Palladium](https://github.com/Anonoei/Palladium/blob/main/printer_data/config/macro_config.cfg)

@@ -3,7 +3,7 @@
 ## base
 ### aliases
 - `STEPPERS_OFF`, runs M84 to turn steppers off
-- `ESTOP`, runts M112 to emergency stop
+- `ESTOP`, runs M112 to emergency stop
 
 ### config
 - `GET_CONFIG SECT=<section> NAME=<name> [SAVED=0]`, get an item from the configuration
