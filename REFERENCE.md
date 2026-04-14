@@ -6,22 +6,22 @@
 - `ESTOP`, runs M112 to emergency stop
 
 ### config
-- `GET_CONFIG SECT=<section> NAME=<name> [SAVED=0]`, get an item from the configuration
+- `CONFIG_GET SECT=<section> NAME=<name> [SAVED=0]`, get an item from the configuration
   - `<section>`: the section of the config, such as `SECT=PRINT`, or `SECT=HOMING`
   - `<name>`: the name of the key
   - If `SAVED=1`, print the saved value instead of runtime value
-- `SET_CONFIG SECT=<section> NAME=<name> TO=<value> [SAVE=0] [PRINT=0]`, set an item in the configuration
+- `CONFIG_SET SECT=<section> NAME=<name> TO=<value> [SAVE=0] [PRINT=0]`, set an item in the configuration
   - `<section>`: the section of the config, such as `SECT=PRINT`, or `SECT=HOMING`
   - `<name>`: the name of the key
   - `<value>`: what to set it to
   - If `SAVE=1`, additionally write the value to saved variables
-  - If `PRINT=1`, after setting, runs `GET_CONFIG SECT=<section> NAME=<name>`
+  - If `PRINT=1`, after setting, runs `CONFIG_GET SECT=<section> NAME=<name>`
 
 ### park
 - `PARK [POS=<position>]`, park the toolhead
   - `<position>`: where to park, defaults to parking in the center
   - If `<position>` is `PRINT`, park at `_CONFIG_PRINT.park`, and don't move Z below print height
-  - If `<position>` is `BUCKET`, runs `_PARK_BUCKET`
+  - If `<position>` is `BUCKET`, runs `BUCKET_PARK`
   - Z position
     - If `TOP` in `<position>`, move to 90% max Z
     - If `BOTTOM` in `<position>`, move to 10% max Z
@@ -89,11 +89,11 @@
 - `SOAK_INT_CANCEL`, cancels `SOAK_INT`, if it's running
 
 ### loop
-- `DELAYED_WIPE TEMP=<temp>`, runs `NOZZLE_WIPE` once hotend reaches `<temp>`
+- `DELAYED_WIPE TEMP=<temp>`, runs `WIPE_NOZZLE` once hotend reaches `<temp>`
 - `DELAYED_EJECT TEMP=<temp>`, runs `EJECT_PARTS`, once hotend reaches `<temp>`
 
 ### wipe
-- `NOZZLE_WIPE [SHAKES=_CONFIG_WIPE.shakes] [WIPES=_CONFIG_WIPE.wipes] [SPEED=_config_WIPE.speed]`, wipes nozzle on brush
+- `WIPE_NOZZLE [SHAKES=_CONFIG_WIPE.shakes] [WIPES=_CONFIG_WIPE.wipes] [SPEED=_config_WIPE.speed]`, wipes nozzle on brush
 
 
 ## print
